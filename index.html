@@ -24,15 +24,32 @@
         </div>
         <div class="row">
             <div class="col-6 order-2">
+<!--                <form>-->
+<!--                    <label for="roast-selection"></label>-->
+<!--                    <select id="roast-selection">-->
+<!--                        <option>light</option>-->
+<!--                        <option>medium</option>-->
+<!--                        <option>dark</option>-->
+<!--                    </select>-->
+<!--                    <input id="submit" type="submit" />-->
+<!--                </form>-->
                 <form>
-                    <label for="roast-selection"></label>
-                    <select id="roast-selection">
-                        <option>light</option>
-                        <option>medium</option>
-                        <option>dark</option>
-                    </select>
-                    <input id="submit" type="submit" />
+                    <div class="form-group">
+                        <label for="roast-selection">Roast</label>
+                        <select class="form-control" id="roast-selection">
+                            <option selected>all</option>
+                            <option>light</option>
+                            <option>medium</option>
+                            <option>dark</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="coffeeName">Coffee Name</label>
+                        <input type="text" class="form-control" id="coffeeName">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                 </form>
+                <hr>
             </div>
             <div class="col-6 order-1">
                 <div class="row tbody">
