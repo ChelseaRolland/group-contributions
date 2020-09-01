@@ -7,7 +7,7 @@ function renderCoffee(coffee) {
     // html += '<td>' + coffee.roast + '</td>';
     // html += '</tr>';
     var html = '<div class="coffee">';
-    // html += '<div>' + coffee.id + '</div>';
+    html += '<div>' + coffee.id + '</div>'; /* class="d-none"*/
     html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
     html += '<p class="d-inline-block">' + coffee.roast + '</p>';
     html += '</div>';
