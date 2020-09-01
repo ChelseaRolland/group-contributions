@@ -17,11 +17,31 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
+    // for (var j = 0; j < coffees.length; j++) {
+    //
+    // }
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
+
+function coffeeTest(obj) {
+    let newArr = [];
+    for (let i = 0; i < obj.length; i++) {
+        newArr.push(obj[i].name);
+    } return newArr;
+}
+
+function resultTest (obj) {
+    let testArray = [];
+    for (let i = 0; i < obj.length; i++) {
+        if (obj[i].name.includes(coffeeSelection.value)) {
+            testArray.push(obj[i].name);
+        }
+    } return testArray;
+}
+
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
@@ -56,9 +76,14 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+// console.log(coffeeTest(coffees));
+
+// console.log(resultTest(coffees))
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var coffeeSelection = document.querySelector('#coffeeName');
 
 // console.log("Pre-sort", coffees);
 
@@ -70,3 +95,5 @@ coffees.sort(function (a,b) {
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+coffeeSelection.addEventListener('input', resultTest);
