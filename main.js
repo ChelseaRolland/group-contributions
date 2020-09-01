@@ -17,9 +17,6 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    // for (var j = 0; j < coffees.length; j++) {
-    //
-    // }
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
@@ -27,10 +24,16 @@ function renderCoffees(coffees) {
 }
 
 function coffeeTest(obj) {
-    let newArr = [];
+    let inputedCoffee = (coffeeSelection.value).toLowerCase();
+    let filterArray = [];
     for (let i = 0; i < obj.length; i++) {
-        newArr.push(obj[i].name);
-    } return newArr;
+        if (coffees[i].name === inputedCoffee) {
+            filterArray.push(coffees[i].name);
+        } else {
+            coffees.style.display = "none";
+        }
+
+    } console.log(filterArray);
 }
 
 function resultTest (obj) {
@@ -96,4 +99,10 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-coffeeSelection.addEventListener('input', resultTest);
+// coffeeSelection.addEventListener('input', function (){
+//     console.log(coffeeSelection.value)
+// });
+
+roastSelection.addEventListener('change', updateCoffees);
+
+coffeeSelection.addEventListener('input', renderCoffees);
