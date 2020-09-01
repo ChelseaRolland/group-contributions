@@ -7,7 +7,7 @@ function renderCoffee(coffee) {
     // html += '<td>' + coffee.roast + '</td>';
     // html += '</tr>';
     var html = '<div class="coffee">';
-    html += '<div>' + coffee.id + '</div>'; /* class="d-none"*/
+    html += '<p class="d-inline-block pr-1">' + coffee.id + '</p>'; /* class="d-none"*/
     html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
     html += '<p class="d-inline-block">' + coffee.roast + '</p>';
     html += '</div>';
@@ -56,6 +56,13 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+
+console.log("Pre-sort", coffees);
+
+coffees.sort(function (a,b) {
+    return b.id - a.id;
+})
+console.log("Post-sort", coffees);
 
 tbody.innerHTML = renderCoffees(coffees);
 
