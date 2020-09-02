@@ -24,27 +24,27 @@ function renderCoffees(coffees) {
 }
 
 
-function coffeeTest(obj) {
-    let inputedCoffee = (coffeeSelection.value).toLowerCase();
-    var html = '';
-    let filterArray = [];
-    for (let i = 0; i < obj.length; i++) {
-        if (coffees[i].name === inputedCoffee) {
-            html += filterArray.push(coffees[i].name);
-        } else {
-            html = '';
-        }
-    }
-}
-
-function resultTest (obj) {
-    let testArray = [];
-    for (let i = 0; i < obj.length; i++) {
-        if (obj[i].name.includes(coffeeSelection.value)) {
-            testArray.push(obj[i].name);
-        }
-    } return testArray;
-}
+// function coffeeTest(arr) {
+//     let inputedCoffee = (coffeeSelection.value).toLowerCase();
+//     var html = '';
+//     let filterArray = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if ((coffees[i].name).toLowerCase() === inputedCoffee) {
+//             filterArray.push(coffees[i].name);
+//         } else {
+//             filterArray = [];
+//         }
+//     }
+// }
+//
+// function resultTest (obj) {
+//     let testArray = [];
+//     for (let i = 0; i < obj.length; i++) {
+//         if (obj[i].name.includes(coffeeSelection.value)) {
+//             testArray.push(obj[i].name);
+//         }
+//     } return testArray;
+// }
 
 
 function updateCoffees(e) {
@@ -101,8 +101,9 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var coffeeSelection = document.querySelector('#coffeeName');
 var roastSelection2 = document.querySelector('#add-roast-selection');
+var coffeeSelection = document.querySelector('#coffeeName');
+var coffeeSelection2 = document.querySelector('#add-coffeeName');
 
 // console.log("Pre-sort", coffees);
 
@@ -115,12 +116,13 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-// coffeeSelection.addEventListener('input', function (){
-//     console.log(coffeeSelection.value)
-// });
-
 roastSelection.addEventListener('change', updateCoffees);
 
-coffeeSelection.addEventListener('input', renderCoffees);
-
 roastSelection2.addEventListener('change', updateCoffeesAdd);
+
+// coffeeSelection.addEventListener('input', coffeeTest);
+// coffeeSelection2.addEventListener('input', coffeeTest);
+
+
+// console.log(coffeeSelection);
+// console.log(coffeeSelection2);
