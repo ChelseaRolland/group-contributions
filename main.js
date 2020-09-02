@@ -131,7 +131,7 @@ function updateCoffees2(e) {
 
     for (let i = 0; i < coffees.length; i++) {
         let roast = coffees[i].roast;
-        if(roast === selectedRoast || selectedRoast === "all") {
+        if(roast === selectedRoast) {
             filteredCoffees.push(coffees[i]);
         }
     }
@@ -143,8 +143,82 @@ function updateCoffees2(e) {
         }
     }
 
+
+
     tbody.innerHTML = renderCoffees(newArr);
 }
+
+function addCoffee (e) {
+
+    let newArr = [];
+    for (let i = 0; i < 1; i++) {
+        newArr.push({
+            id: i,
+            name: coffeeSelection2.value,
+            roast: roastSelection2.value
+        })
+        console.log(newArr)
+        var combineArr = coffees.concat(newArr);
+        console.log(combineArr);
+    }
+    // return combineArr;
+
+    tbody.innerHTML = renderCoffees(combineArr);
+
+
+    // let coffeeadd = coffees.map(function (coffee) {
+    //     let properties = {
+    //         id: car.capacity,
+    //         name: coffeeSelection2.value,
+    //         roast: roastSelection2.value
+    //     };
+    //     if (car.capacity <= 5){
+    //         properties['size'] = "medium";
+    //     }
+    //     if (car.capacity <= 3){
+    //         properties['size'] = "small";
+    //     }
+    //     return properties;
+    // });
+    // console.log(carsProperties);
+    //
+    //
+    //
+    // let coffeeAdd = ['id', 'name', 'roast'];
+    //
+    // let y = coffeeAdd.reduce((acc, elem) => {
+    //     acc[elem] = elem // or what ever object you want inside
+    //     return acc
+    // }, {})
+    // console.log(y)
+    //
+    // // var object = Object.assign({}, ...Object.entries({...keys}).map(([a,b]) => ({ [b]: 'someValue' })))
+    // // console.log(object)
+    // //
+    // //     coffeeAdd.map
+    //
+    //
+    //
+    // // e.preventDefault(); // don't submit the form, we just want to update the data
+    // // var selectedRoast = roastSelection2.value;
+    // // let inputedCoffee = (coffeeSelection2.value).toLowerCase();
+    // // let addCoffeeArray = [];
+    // // console.log(selectedRoast);
+    // // console.log(inputedCoffee);
+    // //
+    // // let newCoffee = {
+    // //     id: ,
+    // //     name: ,
+    // //     roast: ,
+    // // }
+    // //
+    // //
+    // // for (let i = 0; i < coffees.length; i++) {
+    // //     coffees.push()
+    // // }
+
+}
+
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -171,6 +245,7 @@ var coffees = [
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
+var submitButton2 = document.querySelector('#add-submit');
 var roastSelection = document.querySelector('#roast-selection');
 var roastSelection2 = document.querySelector('#add-roast-selection');
 var coffeeSelection = document.querySelector('#coffeeName');
@@ -185,12 +260,13 @@ coffees.sort(function (a,b) {
 
 tbody.innerHTML = renderCoffees(coffees);
 
-// submitButton.addEventListener('click', updateCoffeesTRY);
+submitButton.addEventListener('click', addCoffee);
+submitButton2.addEventListener('click', addCoffee);
 
 roastSelection.addEventListener('change', updateCoffeesTRY);
 
 coffeeSelection.addEventListener('input', updateCoffeesTRY);
 
-roastSelection2.addEventListener('change', updateCoffees2);
+roastSelection2.addEventListener('change', updateCoffeesTRY);
 
-coffeeSelection2.addEventListener('input', updateCoffees2);
+coffeeSelection2.addEventListener('input', updateCoffeesTRY);
