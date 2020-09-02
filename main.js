@@ -6,10 +6,10 @@ function renderCoffee(coffee) {
     // html += '<td>' + coffee.name + '</td>';
     // html += '<td>' + coffee.roast + '</td>';
     // html += '</tr>';
-    var html = '<div class="coffee">';
-    html += '<p class="d-inline-block pr-1">' + coffee.id + '</p>'; /* class="d-none"*/
+    var html = '<div class="coffee col-6">';
+    html += '<p class="d-none">' + coffee.id + '</p>'; /* class="d-none"*/
     html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
-    html += '<p class="d-inline-block">' + coffee.roast + '</p>';
+    html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
     html += '</div>';
 
     return html;
@@ -26,25 +26,44 @@ function renderCoffees(coffees) {
 
 // function coffeeTest(arr) {
 //     let inputedCoffee = (coffeeSelection.value).toLowerCase();
-//     var html = '';
-//     let filterArray = [];
+//     // var html = '';
+//     let newArr = [];
 //     for (let i = 0; i < arr.length; i++) {
 //         if ((coffees[i].name).toLowerCase() === inputedCoffee) {
-//             filterArray.push(coffees[i].name);
-//         } else {
-//             filterArray = [];
+//             newArr.push(coffees[i].name);
 //         }
-//     }
+//     } return newArr;
 // }
-//
-// function resultTest (obj) {
+
+function coffeeTest(arr) {
+    let inputedCoffee = (coffeeSelection.value).toLowerCase();
+    // var html = '';
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let name = (arr[i].name).toLowerCase();
+        if (name === inputedCoffee) {
+            newArr.push(arr[i].name);
+        }
+    } return newArr;
+}
+
+// function resultTest (arr) {
 //     let testArray = [];
-//     for (let i = 0; i < obj.length; i++) {
-//         if (obj[i].name.includes(coffeeSelection.value)) {
-//             testArray.push(obj[i].name);
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i].name.includes(coffeeSelection.value)) {
+//             testArray.push(arr[i].name);
 //         }
 //     } return testArray;
 // }
+
+function resultTest (searchArray, searchString) {
+    let testArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (searchArray[i].includes(searchString)) {
+            testArray.push(searchArray[i]);
+        }
+    } return testArray;
+}
 
 
 function updateCoffees(e) {
@@ -120,9 +139,14 @@ roastSelection.addEventListener('change', updateCoffees);
 
 roastSelection2.addEventListener('change', updateCoffeesAdd);
 
-// coffeeSelection.addEventListener('input', coffeeTest);
+coffeeSelection.addEventListener('input', function() {
+    console.log(coffeeTest(coffees))
+});
+
 // coffeeSelection2.addEventListener('input', coffeeTest);
 
 
 // console.log(coffeeSelection);
 // console.log(coffeeSelection2);
+
+// console.log(coffeeTest(coffees))

@@ -10,3 +10,7 @@ td, th {
 h5, p {
     /*display: inline-block;*/
 }
+
+.sizing {
+    font-size: .75em;
+}
