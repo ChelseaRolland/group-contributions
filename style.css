@@ -15,16 +15,20 @@ body, html {
 }
 
 .jumbotron {
-    background: inherit;
+    /*background-image: url("img/galaxy-jumbo.png");*/
+    background-image: url("img/coffee-watercolor (1).jpg");
 }
 
-.coffee-img {
-    /*border: red solid 5px;*/
+/*.coffee-img {*/
+/*    border: #EDE7E3 solid 5px;*/
+/*}*/
+.coffee-img-bg{
+    background-color: #EDE7E3;
 }
 
-.bean-img {
-    width: 400px;
-    height: 300px;
+
+.coffee-img-bg-border{
+    border: #ffffff solid 2px;
 }
 
 .headings {
@@ -40,5 +44,14 @@ body, html {
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
     background-color: #996515;
     color: #ffffff;
+}
+.bg-submit{
+    background: #CB9FB8;
+    background: -webkit-radial-gradient(center, #CB9FB8, #241A3F);
+    background: -moz-radial-gradient(center, #CB9FB8, #241A3F);
+    background: radial-gradient(ellipse at center, #CB9FB8, #241A3F);
+}
+.form-bg{
+    background-color: black;
 }
 
