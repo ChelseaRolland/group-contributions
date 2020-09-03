@@ -23,70 +23,12 @@ function renderCoffees(coffees) {
     return html;
 }
 
-// function coffeeTest(arr) {
-//     let inputedCoffee = (coffeeSelection.value).toLowerCase();
-//     let newArr = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         let name = (arr[i].name).toLowerCase();
-//         if (name === inputedCoffee || name.includes(inputedCoffee)) {
-//             newArr.push(arr[i].name);
-//         }
-//     } return newArr;
-// }
-
-// function resultTest (arr) {
-//     let testArray = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i].name.includes(coffeeSelection.value)) {
-//             testArray.push(arr[i].name);
-//         }
-//     } return testArray;
-// }
-
-// function resultTest (searchArray, searchString) {
-//     let testArray = [];
-//     for (let i = 0; i < searchArray.length; i++) {
-//         if (searchArray[i].includes(searchString)) {
-//             testArray.push(searchArray[i]);
-//         }
-//     } return testArray;
-// }
-
-
-// function updateCoffees(e) {
-//     e.preventDefault(); // don't submit the form, we just want to update the data
-//     var selectedRoast = roastSelection.value;
-//     var filteredCoffees = [];
-//     coffees.forEach(function(coffee) {
-//         if (coffee.roast === selectedRoast) {
-//             filteredCoffees.push(coffee);
-//         }
-//         if (selectedRoast === "all"){
-//             filteredCoffees.push(coffee);
-//         }
-//     });
-//     tbody.innerHTML = renderCoffees(filteredCoffees);
-// }
-
 function updateCoffeesTRY(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     let inputedCoffee = (coffeeSelection.value).toLowerCase();
     var filteredCoffees = [];
     var newArr = [];
-
-
-    // coffees.forEach(function(coffee) {
-    //     if (coffee.roast === selectedRoast || selectedRoast === "all") {
-    //         filteredCoffees.push(coffee);
-    //     }
-    //     // if ((coffee.name).toLowerCase() === inputedCoffee || ((coffee.name).toLowerCase()).includes(inputedCoffee)) {
-    //     //             filteredCoffees.push(coffee);
-    //     // }
-    //     // if ((coffee.name).toLowerCase() === inputedCoffee || ((coffee.name).toLowerCase()).includes(inputedCoffee)) {
-    //     //     filteredCoffees.push(coffee);
-    //     // }
-    // });
 
     for (let i = 0; i < coffees.length; i++) {
         let roast = coffees[i].roast;
@@ -100,25 +42,7 @@ function updateCoffeesTRY(e) {
         if (name === inputedCoffee || name.includes(inputedCoffee)){
             newArr.push(filteredCoffees[i])
         }
-            // if it is not the name then it could just be the element itself
     }
-
-    // filteredCoffees.forEach(function (filter) {
-    //     if ((filter.toLowerCase()).includes(inputedCoffee)) {
-    //         filterCoffeesRoast.push(filter)
-    //     }
-    // });
-
-    // function coffeeTest(arr) {
-    //     let inputedCoffee = (coffeeSelection.value).toLowerCase();
-    //     let newArr = [];
-    //     for (let i = 0; i < arr.length; i++) {
-    //         let name = (arr[i].name).toLowerCase();
-    //         if (name === inputedCoffee || name.includes(inputedCoffee)) {
-    //             newArr.push(arr[i].name);
-    //         }
-    //     } return newArr;
-    // }
     tbody.innerHTML = renderCoffees(newArr);
 }
 
@@ -142,18 +66,15 @@ function updateCoffees2(e) {
             newArr.push(filteredCoffees[i])
         }
     }
-
-
-
     tbody.innerHTML = renderCoffees(newArr);
 }
 
 function addCoffee (e) {
-
+    e.preventDefault(); // don't submit the form, we just want to update the data
     let newArr = [];
     for (let i = 0; i < 1; i++) {
         newArr.push({
-            id: i,
+            id: coffees.length + 1,
             name: coffeeSelection2.value,
             roast: roastSelection2.value
         })
@@ -161,65 +82,9 @@ function addCoffee (e) {
         var combineArr = coffees.concat(newArr);
         console.log(combineArr);
     }
-    // return combineArr;
 
     tbody.innerHTML = renderCoffees(combineArr);
-
-
-    // let coffeeadd = coffees.map(function (coffee) {
-    //     let properties = {
-    //         id: car.capacity,
-    //         name: coffeeSelection2.value,
-    //         roast: roastSelection2.value
-    //     };
-    //     if (car.capacity <= 5){
-    //         properties['size'] = "medium";
-    //     }
-    //     if (car.capacity <= 3){
-    //         properties['size'] = "small";
-    //     }
-    //     return properties;
-    // });
-    // console.log(carsProperties);
-    //
-    //
-    //
-    // let coffeeAdd = ['id', 'name', 'roast'];
-    //
-    // let y = coffeeAdd.reduce((acc, elem) => {
-    //     acc[elem] = elem // or what ever object you want inside
-    //     return acc
-    // }, {})
-    // console.log(y)
-    //
-    // // var object = Object.assign({}, ...Object.entries({...keys}).map(([a,b]) => ({ [b]: 'someValue' })))
-    // // console.log(object)
-    // //
-    // //     coffeeAdd.map
-    //
-    //
-    //
-    // // e.preventDefault(); // don't submit the form, we just want to update the data
-    // // var selectedRoast = roastSelection2.value;
-    // // let inputedCoffee = (coffeeSelection2.value).toLowerCase();
-    // // let addCoffeeArray = [];
-    // // console.log(selectedRoast);
-    // // console.log(inputedCoffee);
-    // //
-    // // let newCoffee = {
-    // //     id: ,
-    // //     name: ,
-    // //     roast: ,
-    // // }
-    // //
-    // //
-    // // for (let i = 0; i < coffees.length; i++) {
-    // //     coffees.push()
-    // // }
-
 }
-
-
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -239,9 +104,6 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-// console.log(coffeeTest(coffees));
-
-// console.log(resultTest(coffees))
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
@@ -256,7 +118,6 @@ var coffeeSelection2 = document.querySelector('#add-coffeeName');
 coffees.sort(function (a,b) {
     return b.id - a.id;
 })
-// console.log("Post-sort", coffees);
 
 tbody.innerHTML = renderCoffees(coffees);
 
