@@ -1,13 +1,3 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
-
 * {
     font-family: 'Righteous', cursive;
 }
@@ -20,21 +10,11 @@ body, html {
 }
 
 .sizing {
-    font-size: .75em;
+    font-size: 1.25em;
     color: #CA9EB8;
 }
 
 .jumbotron {
-    /*background-image: url("img/coffee-watercolor.jpg");*/
-    /*filter: blur(8px);*/
-    /*-webkit-filter: blur(8px);*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: center;*/
-    /*background-size: cover;*/
-    /*background: #E8DFDF;*/
-    /*background: -webkit-linear-gradient(top left, #E8DFDF, #EED0C6);*/
-    /*background: -moz-linear-gradient(top left, #E8DFDF, #EED0C6);*/
-    /*background: linear-gradient(to bottom right, #E8DFDF, #EED0C6);*/
     background: inherit;
 }
 
@@ -42,10 +22,13 @@ body, html {
     /*border: red solid 5px;*/
 }
 
-.headings {
+.bean-img {
+    width: 400px;
+    height: 300px;
+}
 
+.headings {
     font-family: 'Megrim', cursive;
-    /*font-family: 'Press Start 2P', cursive;*/
 }
 .card {
     background-color: #EDE7E3;
