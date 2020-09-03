@@ -1,15 +1,32 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    // var html = '<tr class="coffee">';
-    // html += '<td>' + coffee.id + '</td>';
-    // html += '<td>' + coffee.name + '</td>';
-    // html += '<td>' + coffee.roast + '</td>';
-    // html += '</tr>';
-    var html = '<div class="coffee col-6">';
-    html += '<p class="d-none">' + coffee.id + '</p>'; /* class="d-none"*/
+    // var html = '<div class="coffee col-6">';
+    // html += '<p class="d-none">' + coffee.id + '</p>'; /* class="d-none"*/
+    // html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
+    // html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
+    // html += '</div>';
+
+    // <div class="card" style="width: 18rem;">
+    //     <img src="..." class="card-img-top" alt="...">
+    //         <div class="card-body">
+    //             <h5 class="card-title">Card title</h5>
+    //             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    //             <a href="#" class="btn btn-primary">Go somewhere</a>
+    //         </div>
+    // </div>
+    var html = '<div class="card col-6 p-2">';
+    html += '<div class="row">'
+    html += '<div class="col-3">'
+    html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="card-img" alt="coffee">';
+    html += '</div>'
+    html += '<div class="col-9">'
+    html += '<div class="card-body">';
     html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
     html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
+    html += '</div>'
+    html += '</div>';
+    html += '</div>';
     html += '</div>';
 
     return html;
