@@ -7,19 +7,41 @@ function renderCoffee(coffee) {
     // html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
     // html += '</div>';
 
-    // var html = '<div class="card col-6 p-2">';
-    // html += '<div class="row">'
-    // html += '<div class="col-3">'
+    var html = '<div class="col mb-4">';
+    html += '<div class="card">';
+    html += '<div class="row no-gutters">';
+    html += '<div class="col">';
+    html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="card-img" alt="coffee">';
+    html += '</div>'
+    html += '<div class="col-md-8">'
+    html += '<div class="card-body">';
+    html += '<h6 class="d-inline-block headings pr-2">' + coffee.name + '</h6>';
+    html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
+    html += '</div>';
+    html += '</div>';
+    html += '</div>';
+    html += '</div>';
+    html += '</div>';
+
+    // var html = '<div class="col mb-4">';
+    // html += '<div class="card">';
     // html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="card-img" alt="coffee">';
-    // html += '</div>'
-    // html += '<div class="col-9">'
-    // html += '<div class="card-body">';
-    // html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
-    // html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
-    // html += '</div>'
+    //
     // html += '</div>';
     // html += '</div>';
     // html += '</div>';
+    // html += '</div>';
+
+
+
+        // <div class="col mb-4">
+        //     <div class="card">
+        //         <img src="..." class="card-img-top" alt="...">
+        //             <div class="card-body">
+        //                 <h5 class="card-title">Card title</h5>
+        //                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        //             </div>
+        //     </div>
 
     // <div class="media">
     //     <img src="..." class="mr-3" alt="...">
@@ -28,13 +50,13 @@ function renderCoffee(coffee) {
     //             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
     //         </div>
     // </div>
-    var html = '<div class="media col-6 align-items-center text-center">';
-    html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="mr-3" alt="coffee" style="width: 128px;" >'
-    html += '<div class="media-body">'
-    html += '<h6 class="pr-1">' + coffee.name + '</h6>';
-    html += '<p class="text-muted sizing">' + coffee.roast + '</p>';
-    html += '</div>'
-    html += '</div>'
+    // var html = '<div class="media col-6 align-items-center text-center">';
+    // html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="mr-3" alt="coffee" style="width: 128px;" >'
+    // html += '<div class="media-body">'
+    // html += '<h5 class="pr-1 headings">' + coffee.name + '</h5>';
+    // html += '<p class="text-muted sizing paratags">' + coffee.roast + '</p>';
+    // html += '</div>'
+    // html += '</div>'
     // html += '</div>'
     // html += '</div>'
 
@@ -150,7 +172,7 @@ coffees.sort(function (a,b) {
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', addCoffee);
+// submitButton.addEventListener('click', addCoffee);
 submitButton2.addEventListener('click', addCoffee);
 
 roastSelection.addEventListener('change', updateCoffeesTRY);

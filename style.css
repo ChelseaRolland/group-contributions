@@ -7,10 +7,53 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
-h5, p {
-    /*display: inline-block;*/
+* {
+    font-family: 'Damion', cursive;
+}
+
+body, html {
+    background: #E8DFDF;
+    background: -webkit-linear-gradient(bottom right, #E8DFDF, #EED0C6);
+    background: -moz-linear-gradient(bottom right, #E8DFDF, #EED0C6);
+    background: linear-gradient(to top left, #E8DFDF, #EED0C6);
 }
 
 .sizing {
     font-size: .75em;
 }
+
+.jumbotron {
+    /*background-image: url("img/coffee-watercolor.jpg");*/
+    /*filter: blur(8px);*/
+    /*-webkit-filter: blur(8px);*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    /*background: #E8DFDF;*/
+    /*background: -webkit-linear-gradient(top left, #E8DFDF, #EED0C6);*/
+    /*background: -moz-linear-gradient(top left, #E8DFDF, #EED0C6);*/
+    /*background: linear-gradient(to bottom right, #E8DFDF, #EED0C6);*/
+    background: inherit;
+}
+
+.coffee-img {
+    /*border: red solid 5px;*/
+}
+
+.headings {
+
+    font-family: 'Megrim', cursive;
+    /*font-family: 'Press Start 2P', cursive;*/
+}
+.card {
+    background-color: #EDE7E3;
+    border: solid #ffffff 2px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    background-color: #996515;
+    color: #ffffff;
+}
+
