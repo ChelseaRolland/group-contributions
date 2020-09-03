@@ -7,8 +7,9 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+
 * {
-    font-family: 'Damion', cursive;
+    font-family: 'Righteous', cursive;
 }
 
 body, html {
@@ -20,6 +21,7 @@ body, html {
 
 .sizing {
     font-size: .75em;
+    color: #CA9EB8;
 }
 
 .jumbotron {

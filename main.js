@@ -16,7 +16,7 @@ function renderCoffee(coffee) {
     html += '<div class="col-md-8">'
     html += '<div class="card-body">';
     html += '<h6 class="d-inline-block headings pr-2">' + coffee.name + '</h6>';
-    html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
+    html += '<p class="d-inline-block sizing">' + coffee.roast + '</p>';
     html += '</div>';
     html += '</div>';
     html += '</div>';
