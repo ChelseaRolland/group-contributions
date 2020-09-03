@@ -7,27 +7,37 @@ function renderCoffee(coffee) {
     // html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
     // html += '</div>';
 
-    // <div class="card" style="width: 18rem;">
-    //     <img src="..." class="card-img-top" alt="...">
-    //         <div class="card-body">
-    //             <h5 class="card-title">Card title</h5>
-    //             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    //             <a href="#" class="btn btn-primary">Go somewhere</a>
+    // var html = '<div class="card col-6 p-2">';
+    // html += '<div class="row">'
+    // html += '<div class="col-3">'
+    // html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="card-img" alt="coffee">';
+    // html += '</div>'
+    // html += '<div class="col-9">'
+    // html += '<div class="card-body">';
+    // html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
+    // html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
+    // html += '</div>'
+    // html += '</div>';
+    // html += '</div>';
+    // html += '</div>';
+
+    // <div class="media">
+    //     <img src="..." class="mr-3" alt="...">
+    //         <div class="media-body">
+    //             <h5 class="mt-0">Media heading</h5>
+    //             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
     //         </div>
     // </div>
-    var html = '<div class="card col-6 p-2">';
-    html += '<div class="row">'
-    html += '<div class="col-3">'
-    html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="card-img" alt="coffee">';
+    var html = '<div class="media col-6 align-items-center text-center">';
+    html += '<img src="img/pexels-tirachard-kumtanom-544113.jpg" class="mr-3" alt="coffee" style="width: 128px;" >'
+    html += '<div class="media-body">'
+    html += '<h6 class="pr-1">' + coffee.name + '</h6>';
+    html += '<p class="text-muted sizing">' + coffee.roast + '</p>';
     html += '</div>'
-    html += '<div class="col-9">'
-    html += '<div class="card-body">';
-    html += '<h6 class="d-inline-block pr-1">' + coffee.name + '</h6>';
-    html += '<p class="d-inline-block text-muted sizing">' + coffee.roast + '</p>';
     html += '</div>'
-    html += '</div>';
-    html += '</div>';
-    html += '</div>';
+    // html += '</div>'
+    // html += '</div>'
+
 
     return html;
 }
@@ -63,28 +73,28 @@ function updateCoffeesTRY(e) {
     tbody.innerHTML = renderCoffees(newArr);
 }
 
-function updateCoffees2(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection2.value;
-    let inputedCoffee = (coffeeSelection2.value).toLowerCase();
-    var filteredCoffees = [];
-    var newArr = [];
-
-    for (let i = 0; i < coffees.length; i++) {
-        let roast = coffees[i].roast;
-        if(roast === selectedRoast) {
-            filteredCoffees.push(coffees[i]);
-        }
-    }
-
-    for (let i = 0; i < filteredCoffees.length;  i++) {
-        let name = (filteredCoffees[i].name).toLowerCase();
-        if (name === inputedCoffee || name.includes(inputedCoffee)){
-            newArr.push(filteredCoffees[i])
-        }
-    }
-    tbody.innerHTML = renderCoffees(newArr);
-}
+// function updateCoffees2(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedRoast = roastSelection2.value;
+//     let inputedCoffee = (coffeeSelection2.value).toLowerCase();
+//     var filteredCoffees = [];
+//     var newArr = [];
+//
+//     for (let i = 0; i < coffees.length; i++) {
+//         let roast = coffees[i].roast;
+//         if(roast === selectedRoast) {
+//             filteredCoffees.push(coffees[i]);
+//         }
+//     }
+//
+//     for (let i = 0; i < filteredCoffees.length;  i++) {
+//         let name = (filteredCoffees[i].name).toLowerCase();
+//         if (name === inputedCoffee || name.includes(inputedCoffee)){
+//             newArr.push(filteredCoffees[i])
+//         }
+//     }
+//     tbody.innerHTML = renderCoffees(newArr);
+// }
 
 function addCoffee (e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
@@ -96,11 +106,13 @@ function addCoffee (e) {
             roast: roastSelection2.value
         })
         console.log(newArr)
-        var combineArr = coffees.concat(newArr);
-        console.log(combineArr);
+        // var combineArr = coffees.concat(newArr);
+        coffees = coffees.concat(newArr);
+        console.log(coffees);
     }
 
-    tbody.innerHTML = renderCoffees(combineArr);
+    // tbody.innerHTML = renderCoffees(combineArr);
+    updateCoffeesTRY(e);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
