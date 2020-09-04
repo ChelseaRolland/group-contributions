@@ -15,8 +15,9 @@ body, html {
 }
 
 .jumbotron {
-    /*background-image: url("img/galaxy-jumbo.png");*/
-    background-image: url("img/coffee-watercolor (1).jpg");
+    background-image: url("img/coffee-watercolor.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /*.coffee-img {*/
