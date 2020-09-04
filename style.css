@@ -18,6 +18,7 @@ body, html {
     background-image: url("img/coffee-watercolor.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 /*.coffee-img {*/
